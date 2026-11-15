@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivam Ke Alfaaz</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #10131d;
+  color: #f8eee3;
+  font-family: Georgia, serif;
+}
+
+header {
+  text-align: center;
+  padding: 35px 15px;
+  background: #1c2232;
+}
+
+header h1 {
+  color: #e9c58e;
+  font-size: 30px;
+}
+
+nav {
+  text-align: center;
+  padding: 18px;
+  background: #171c29;
+}
+
+nav a {
+  color: #e9c58e;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.hero {
+  text-align: center;
+  padding: 65px 15px;
+}
+
+.hero h2 {
+  color: #e9c58e;
+  font-size: 29px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 18px;
+}
+
+.card {
+  background: #1c2232;
+  border: 1px solid #514357;
+  border-radius: 14px;
+  padding: 25px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.card h3 { color: #e9c58e; }
+
+.card p {
+  white-space: pre-line;
+  line-height: 2;
+  font-size: 17px;
+}
+
+.category { color: #c4a8d8; }
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #1c2232;
+  color: #bbb;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>शिवम के अल्फ़ाज़</h1>
+  <p>मेरे एहसास • मेरी कलम • मेरी दुनिया</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#shayari">मेरी शायरी</a>
+  <a href="#about">मेरे बारे में</a>
+</nav>
+
+<section class="hero" id="home">
+  <h2>स्वागत है मेरी अल्फ़ाज़ों की दुनिया में ❤️</h2>
+  <p>कुछ बातें लफ़्ज़ों में ही खूबसूरत लगती हैं।</p>
+</section>
+
+<main class="container" id="shayari">
+  <h2 style="text-align:center;color:#e9c58e">
+    ✍️ मेरी शायरी
+  </h2>
+
+  <div id="posts"></div>
+</main>
+
+<section class="container card" id="about">
+  <h2 style="color:#e9c58e">मेरे बारे में</h2>
+  <p>मैं शिवम हूं।
+यह मेरी अपनी शायरी और एहसासों की दुनिया है।
+मेरी कलम से निकले हर अल्फ़ाज़ का अपना एक सफर है।</p>
+</section>
+
+<footer>
+  © 2026 Shivam Ke Alfaaz
+  <p>All Rights Reserved.</p>
+</footer>
+
+<script>
+const shayari = [
+  {
+    title: "मेरी पहली शायरी",
+    category: "My Shayari",
+    text: "यहां अपनी पहली शायरी लिखें।\nयहां दूसरी पंक्ति लिखें।"
+  }
+];
+
+const posts = document.getElementById("posts");
+
+shayari.forEach(item => {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  const title = document.createElement("h3");
+  title.textContent = item.title;
+
+  const category = document.createElement("div");
+  category.className = "category";
+  category.textContent = item.category;
+
+  const content = document.createElement("p");
+  content.textContent = item.text;
+
+  card.append(title, category, content);
+  posts.appendChild(card);
+});
+</script>
+
+</body>
+</html>
